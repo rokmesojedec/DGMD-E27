@@ -1,0 +1,21 @@
+nav {
+    background: $accent;
+    padding: 0.5rem;
+    ul{
+        justify-content: flex-start;
+        display:flex;
+        flex: $fullwidthflex;
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 0 0 15%;
+            a{
+                text-decoration: none;
+                color: $textcolor-alt;
+            }
+        }
+    }
+}

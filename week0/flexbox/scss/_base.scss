@@ -1,0 +1,52 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+  }
+  /* inherit border-box on all elements in the universe and before and after
+   */
+*, 
+*:before, 
+*:after {
+    box-sizing: inherit;
+}
+
+header, nav{ 
+    display: flex;
+    justify-content: center;
+    h1{
+        flex: $fullwidthflex;
+        color: $textcolor-alt;
+        font-family: "Roboto", sans-serif;
+    }
+}
+
+header{ 
+    background: $bg-alt;
+}
+
+body{
+    color: $textcolor;
+    margin: 0;
+    padding: 0;
+    font-family: "open sans", sans-serif;
+}
+
+.wrapper{
+    display: block;
+    width: 100%;
+    .row{ 
+        display: flex;
+    }
+    .sidebar, .main{
+        outline: 3px solid red;
+        padding: 1rem;
+    }
+    $sidebarWidth: 10%;
+    .sidebar{
+        flex: 0 0 $sidebarWidth;
+    }
+    .main{ 
+        flex: 0 0 100% - $sidebarWidth;
+    }
+}
