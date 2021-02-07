@@ -1,0 +1,54 @@
+@media (min-width: 880px) {
+    $columnCount: 2;
+    $halfPoint: ($columnCount / 2 + 1);
+    %fullWidth {
+        grid-column: {
+            start: 1;
+            end: $columnCount + 1;
+        }
+    }
+
+    %firstHalfWidth {
+        grid-column: {
+            start: 1;
+            end: $halfPoint;
+        };
+    }
+
+    %secondHalfWidth { 
+        grid-column: $halfPoint / $columnCount + 1;
+    }
+
+    footer, header, .main {
+        display: grid;
+        @extend %fullWidth;
+    }
+    .main { 
+        .intro{ 
+            @extend %firstHalfWidth;
+        }
+        .second { 
+            @extend %secondHalfWidth;
+        }
+        grid-template: {
+            @include columnPercentages(6, "columns");
+        }
+        
+
+    }
+    header {
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            @extend %secondHalfWidth;
+            ul {
+                display: flex;
+                li {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

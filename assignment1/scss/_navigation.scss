@@ -1,0 +1,26 @@
+
+ul {
+    li {
+        & + li {
+            margin-left: $unit / 2;
+        }
+        a{
+            padding: $unit 2*$unit;
+            text-decoration: none;
+            color: black;
+            font: {
+                weight: bold;  
+            }
+            text-transform: uppercase;
+            border: {
+                width: 1px;
+                color: lighten(black, 30%);
+                style: solid;
+                radius: $unit / 4 $unit / 4 0 0;
+                bottom: {
+                    style: none;
+                }
+            }
+        }
+    }
+}
