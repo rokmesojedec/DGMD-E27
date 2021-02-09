@@ -1,4 +1,14 @@
-body, html{
+%headingFontStyle {
+    text: {
+        shadow: $text-shadow-style;
+    }
+    font: {
+        family: $heading-font-stack;
+    }
+}
+
+body,
+html {
     padding: 0;
     margin: 0;
     font: {
@@ -6,30 +16,92 @@ body, html{
     }
 }
 
-h1, h2, h3, h4, h5, h6{
-    font: {
-        family: $heading-font-stack;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: color.scale(darken($accent-primary, 65%), $alpha: -13%);
+    @extend %headingFontStyle;
 }
 
-header{ 
+header {
     margin-top: 2 * $unit;
-    h1{ 
+    h1 {
         display: inline;
+        text-transform: uppercase;
+        letter-spacing: $unit;
     }
     border: {
-        bottom: 1px solid black;
+        bottom: $border-style;
+    }
+}
+section {
+    margin: {
+        top: $unit;
+    }
+
+    article {
+        $lightnessAmount: 50%;
+        $backgroundSelectors: 
+            "4n + 1" color.scale($accent-primary, $lightness: $lightnessAmount), 
+            "4n + 0" color.scale($accent-secondary, $lightness: $lightnessAmount), 
+            "4n + 2" color.scale($accent-tertiary, $lightness: $lightnessAmount),
+            "4n + 3" color.scale($secondary-color, $lightness: $lightnessAmount);
+
+        $oddEvenSelectors: 
+            "odd" 1, 
+            "even" -1;
+
+        border: $border-style;
+    
+
+        @each $nSelector, $color in $backgroundSelectors {
+            &:nth-child(#{$nSelector}) {
+                div {
+                    background: $color;
+                    box-shadow: 0 0 2px 1px $color;
+                }
+            }
+        }
+
+        @each $nSelector, $negator in $oddEvenSelectors {
+            &:nth-child(#{$nSelector}) {
+                div {
+                    transform: rotate($rotateDegree * $negator);
+                    & > * {
+                        transform: rotate(-$rotateDegree * $negator);
+                    }
+                }
+            }
+        }
+
+        div {
+    
+            min-height: 13 * $unit;
+            padding: $unit*2;
+            position: relative;
+            z-index: -1;
+            margin: 0 -$unit*0.25;
+        }
     }
 }
 
-ul{
-    padding: 0; 
+footer{
+    margin: {
+        top: $unit;
+    }
+}
+
+ul {
+    padding: 0;
     margin: 0;
-    li{
+    li {
         display: inline;
         list-style: none;
-        a{
-
+        a {
+            @extend %headingFontStyle;
         }
     }
 }

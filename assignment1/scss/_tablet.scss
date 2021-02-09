@@ -23,18 +23,32 @@
         display: grid;
         @extend %fullWidth;
     }
-    .main { 
-        .intro{ 
-            @extend %firstHalfWidth;
-        }
-        .second { 
-            @extend %secondHalfWidth;
-        }
+   
+    section {
+        grid-gap: $unit * 1.5;
         grid-template: {
-            @include columnPercentages(6, "columns");
+            /* The VS Code linter doesn't like this, but it does compile properly into CSS */
+            columns: repeat(6, 1fr);
+            rows: auto 1fr;
         }
-        
 
+        article {
+            h2{
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+            border: $border-style;
+            align-self: center;
+            &:first-child{
+                grid-column-end: span 3;
+            }
+
+            &:nth-child(2){
+                grid-column-end: span 3;
+            }
+            grid-column-end: span 2;
+    
+        }
     }
     header {
         h1 {

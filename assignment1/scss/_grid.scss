@@ -1,6 +1,5 @@
 $grid-columns-count: 2;
 
-
 @mixin columnPercentages($count, $property) {
     $columnValues: ();
     $size: 100% / $count;
