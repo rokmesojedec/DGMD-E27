@@ -1,0 +1,28 @@
+@mixin mediaQuery($from, $to: null) {
+    @if ($to) and not ($from) {
+        @media (max-width: $from) {
+            @content;
+        }
+    }
+
+    @if ($from) and not ($to) {
+        @media (min-width: $from) {
+            @content;
+        }
+    }
+
+    @if ($from) and ($to) {
+        @media (min-width: $from) and (max-width: $to) {
+            @content;
+        }
+    }
+}
+
+@mixin gradient($degrees, $lighten: 0%, $colors){
+    background: nth($colors, 1);
+    $colorValues: ();
+    @each $color in $colors {
+        $colorValues: append($colorValues, lighten($color, $lighten), comma);
+    }
+    background: linear-gradient($degrees, $colorValues);
+}

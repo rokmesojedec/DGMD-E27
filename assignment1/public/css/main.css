@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+ul li a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom-style: none;
+}
+
+#layout {
+  margin: 0 auto;
+  display: grid;
+}
+#layout grid {
+  gap: 1rem;
+}
+
+.main article.col-1 {
+  grid-column-end: span 1;
+}
+.main article.col-2 {
+  grid-column-end: span 2;
+}
+.main article.col-3 {
+  grid-column-end: span 3;
+}
+.main article.col-4 {
+  grid-column-end: span 4;
+}
+.main article.col-5 {
+  grid-column-end: span 5;
+}
+.main article.col-6 {
+  grid-column-end: span 6;
+}
+.main article.col-7 {
+  grid-column-end: span 7;
+}
+.main article.col-8 {
+  grid-column-end: span 8;
+}
+.main article.col-9 {
+  grid-column-end: span 9;
+}
+.main article.col-10 {
+  grid-column-end: span 10;
+}
+.main article.col-11 {
+  grid-column-end: span 11;
+}
+.main article.col-12 {
+  grid-column-end: span 12;
+}
+
+nav ul li a, h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 3px 3px 2px rgba(236, 255, 133, 0.8), -3px 3px 2px rgba(133, 220, 255, 0.8), 0px 2px #ff70a6ff, -6px 2px rgba(255, 167, 133, 0.8);
+  font-family: "Major Mono Display", monospace;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 25, 36, 0.87);
+  text-transform: lowercase;
+  margin: 0;
+}
+
+#layout {
+  width: auto;
+}
+
+code {
+  margin: 0;
+  font-family: "courier", monospace;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+header {
+  margin-top: 2rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.65);
+}
+header h1 {
+  display: inline;
+  letter-spacing: 1rem;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+}
+nav ul li {
+  display: inline;
+  list-style: none;
+}
+nav ul li a {
+  padding: 1rem 2rem;
+  color: black;
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: lowercase;
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom-style: none;
+}
+
+@keyframes curtain {
+  0% {
+    grid-gap: 3rem;
+  }
+  100% {
+    grid-gap: 1.5rem;
+  }
+}
+.main {
+  margin-top: 1rem;
+}
+.main article {
+  display: flex;
+  margin-top: 2rem;
+}
+.main article .color-scheme span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: inline-block;
+}
+.main article ul {
+  padding-left: 0;
+  list-style: none;
+}
+.main article h2 {
+  margin-top: 0;
+}
+.main article:nth-child(4n+0) div {
+  border: none;
+  background: #ff9770ff, #e9ff70ff, #e9ff70ff;
+  background: #ff9770ff;
+  background: linear-gradient(0deg, #ffe1d6, #f9ffd6, #f9ffd6);
+}
+.main article:nth-child(4n+0) div div {
+  background: none;
+  border-width: 2px;
+  border-color: rgba(112, 214, 255, 0.9);
+  border-style: solid;
+}
+.main article:nth-child(4n+1) div {
+  border: none;
+  background: #ff9770ff, #70d6ffff, #e9ff70ff;
+  background: #ff9770ff;
+  background: linear-gradient(41deg, #ffe1d6, #d6f3ff, #f9ffd6);
+}
+.main article:nth-child(4n+1) div div {
+  background: none;
+  border-width: 2px;
+  border-color: rgba(255, 214, 112, 0.9);
+  border-style: solid;
+}
+.main article:nth-child(4n+2) div {
+  border: none;
+  background: #ff9770ff, #ffd670ff, #e9ff70ff;
+  background: #ff9770ff;
+  background: linear-gradient(82deg, #ffe1d6, #fff3d6, #f9ffd6);
+}
+.main article:nth-child(4n+2) div div {
+  background: none;
+  border-width: 2px;
+  border-color: rgba(112, 214, 255, 0.54);
+  border-style: solid;
+}
+.main article:nth-child(4n+3) div {
+  border: none;
+  background: #ff9770ff, #ade8ff, #ff70a6ff;
+  background: #ff9770ff;
+  background: linear-gradient(123deg, #ffe1d6, white, #ffd6e5);
+}
+.main article:nth-child(4n+3) div div {
+  background: none;
+  border-width: 2px;
+  border-color: rgba(255, 151, 112, 0.9);
+  border-style: solid;
+}
+.main article:nth-child(odd) div {
+  transform: rotate(-1.5deg);
+}
+.main article:nth-child(odd) div div {
+  transform: rotate(2deg);
+}
+.main article:nth-child(odd) div div > * {
+  transform: rotate(-0.5deg);
+}
+.main article:nth-child(even) div {
+  transform: rotate(1.5deg);
+}
+.main article:nth-child(even) div div {
+  transform: rotate(-2deg);
+}
+.main article:nth-child(even) div div > * {
+  transform: rotate(0.5deg);
+}
+.main article div {
+  display: flex;
+  padding: 0;
+}
+.main article div div {
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  z-index: -1;
+  margin: -0.25rem;
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+@media (min-width: 1050px) {
+  header,
+.main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  header nav {
+    grid-column: 2;
+  }
+
+  header,
+.main {
+    display: grid;
+  }
+
+  #layout {
+    min-width: 880px;
+    width: 1050px;
+  }
+
+  nav ul li + li {
+    margin-left: 0.5rem;
+  }
+  nav ul li a {
+    display: inline;
+  }
+
+  .main {
+    grid-gap: 1.5rem;
+    /* The VS Code linter doesn't like this, but it does compile properly into CSS */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+  .main article {
+    border-radius: 5px;
+    margin-top: 0;
+    grid-column-end: span 4;
+  }
+  .main article:nth-child(1) {
+    grid-column-end: span 4;
+  }
+  .main article:nth-child(2) {
+    grid-column-end: span 8;
+  }
+  .main article div {
+    border-radius: 5px;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+  header nav ul {
+    display: flex;
+  }
+  header nav ul li {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

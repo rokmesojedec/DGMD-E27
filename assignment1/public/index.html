@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS Study - Rok Mesojedec</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <h1>SASS<br /> Study</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">SASS Study</a></li>
+                    <li><a href="page2.html">About Rok</a></li>
+                    <li><a href="https://sass-lang.com/documentation" target="_blank">SASS docs</a></li>
+                    <li><a href="https://www.w3.org/Style/CSS/specs.en.html" target="_blank">CSS docs</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main">
+            <article>
+                <div>
+                    <div>
+                        <h2>&#128196; Purpose</h2>
+                        <p>The purpose of this site is to store notes, comments and reflections on subjects of SCSS, UI
+                            design and DGMD E27 course work.</p>
+                        <p>I plan to add little snippets that make my day (or which for which I always forget the
+                            syntax).</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <div>
+                        <h2>&#x1F468&#x200D&#x1F4BB; Design Concept</h2>
+                        <p>The requirements for DGMD E27 Assignment 1 state that the submitted website needs to
+                            implement a
+                            grid/flex based layout. I decided that the visual design should reflect the spirit of
+                            grid/flex
+                            techniques and produce a play of rectangular geometric shapes with a pleasing and
+                            complementing
+                            combination of colors.</p>
+                        <p>Having rectangles and angular shapes in mind, I tried experimenting with a misprint style,
+                            which
+                            can be an artifact of misaligned color layers when printing paper media. I tried to
+                            replicate
+                            this with each grid data cell, which has a colored border, with a slightly misaligned
+                            background, which protrudes outside the bounds of the border container by being slightly
+                            rotated
+                            by 1.5 degrees. The content inside the inner container is, in turn, rotated back to 0-degree
+                            horizontal alignment, to avoid affecting the readability of the content.</p>
+
+                        <p>In addition to main article containers, I also styled site headings, by applying on them
+                            sharp
+                            text shadows which are colored in all the different color accents I picked for the color
+                            scheme
+                            of this site. This gives the heading an eye-catching and - in my opinion - aesthetically
+                            pleasing look. And what's really cool is that this is achieved with a code-only approach so
+                            no
+                            photoshop was needed.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-3">
+                <div>
+                    <div>
+                        <h2>&#127752; Colors</h2>
+                        <p>Here are the colors used on this site.</p>
+                        <ul class="color-scheme">
+                            <li><span style="background:#000000" title="font-color"></span>#000000</li>
+                            <li><span style="background:#ff70a6ff" title="secondary-color"></span>#ff70a6ff</li>
+                            <li><span style="background:#70d6ffff" title="accent-primary"></span>#70d6ffff</li>
+                            <li><span style="background:#ffd670ff" title="accent-secondary"></span>#ffd670ff</li>
+                            <li><span style="background:#e9ff70ff" title="accent-tertiary"></span>#e9ff70ff</li>
+                            <li><span style="background:#ff9770ff" title="accent-quaternary"></span>#ff9770ff</li>
+                        </ul>
+                        <p>I've generated the color-scheme with <a
+                                href="https://coolors.co/70d6ff-ff70a6-ff9770-ffd670-e9ff70"
+                                target="_blank">coolor.co</a>.</a></p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-9">
+                <div>
+                    <div>
+                        <h2>&#127765; Rok's Awesome Gradient Mixin</h2>
+                        <p>This mixin takes three arguments. The first one <code>$degrees</code> is the amount of
+                            rotation
+                            in degrees applied to the generated gradient.
+                            <code>$lighten</code> must be a precentage value which lightens the passed colors.
+                            <code>$colors</code> must be a SASS list of valid color values.
+                        </p>
+                        <p class="no-margin">
+                            <code><strong>@mixin gradient($degrees, $lighten: 0%, $colors)</strong>{
+    background: nth($colors, 1);
+    $colorValues: ();
+    @each $color in $colors {
+        $colorValues: append($colorValues, lighten($color, $lighten), comma);
+    }
+    background: linear-gradient($degrees, $colorValues);
+}
+                        </code>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div>
+                    <div>
+                        <h2>&#128187; @for Syntax</h2>
+                        <p>
+                            <code>@for $i from 1 through 10 {
+    ... do something
+}</code>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <div>
+                        <h2>&#128187; @each Syntax</h2>
+                        <p><code>@each $value in (list-of-values) {
+    ... do something with $value
+}
+                    </code></p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <div>
+                        <h2>&#128187; @function syntax</h2>
+                        <p><code>@function fnName($arg){
+    ... do something with $arg;
+    @return ...;
+}</code></p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        <footer>
+            &#169; 2021 <a href="mailto:rok@mesojedec.io">Rok Mesojedec</a>. All rights reserved.
+        </footer>
+    </div>
+</body>
+
+</html>

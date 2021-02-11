@@ -1,0 +1,82 @@
+@include mediaQuery($site-width) {
+    $columnCount: 2;
+    $halfPoint: ($columnCount / 2 + 1);
+
+    %fullWidth {
+        grid-column: {
+            start: 1;
+            end: $columnCount + 1;
+        }
+    }
+
+    %firstHalfWidth {
+        grid-column: {
+            start: 1;
+            end: $halfPoint;
+        }
+    }
+
+    %secondHalfWidth {
+        grid-column: $halfPoint / $columnCount + 1;
+    }
+
+    header,
+    .main {
+        display: grid;
+        @extend %fullWidth;
+    }
+
+    #layout {
+        min-width: 880px;
+        width: $site-width;
+    }
+
+    nav {
+        ul {
+            li {
+                & + li {
+                    margin-left: $unit / 2;
+                }
+                a {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .main {
+        grid-gap: $unit * 1.5;
+        grid-template: {
+            /* The VS Code linter doesn't like this, but it does compile properly into CSS */
+            columns: repeat(12, 1fr);
+            rows: auto 1fr;
+        }
+        article {
+            border-radius: 5px;
+            margin-top: 0;
+            @each $n in 1, 2 {
+                &:nth-child(#{$n}) {
+                    grid-column-end: span $n * 4;
+                }
+            }
+            grid-column-end: span 4;
+            div {
+                border-radius: 5px;
+            }
+        }
+    }
+    header {
+        h1 {
+            margin: 0;
+        }
+        nav {
+            @extend %secondHalfWidth;
+            ul {
+                display: flex;
+                li {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

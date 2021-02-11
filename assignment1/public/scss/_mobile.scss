@@ -1,0 +1,189 @@
+%headingFontStyle {
+    text: {
+        shadow: $text-shadow-style;
+    }
+    font: {
+        family: $heading-font-stack;
+    }
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font: {
+        family: $font-stack;
+    }
+}
+
+body {
+    padding: $unit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: color.scale(darken($accent-primary, 65%), $alpha: -13%);
+    text-transform: lowercase;
+    margin: 0;
+    @extend %headingFontStyle;
+}
+
+#layout {
+    width: auto;
+}
+
+code {
+    margin: 0;
+    font: {
+        family: $code-font-stack;
+    }
+    white-space: pre-wrap;
+    font-size: 12px;
+}
+
+header {
+    margin-top: 2 * $unit;
+    h1 {
+        display: inline;
+        letter-spacing: $unit;
+    }
+    border: {
+        bottom: $border-style;
+    }
+}
+
+nav {
+    ul {
+        padding: 0;
+        margin: 0;
+        margin-top: $unit;
+        li {
+            display: inline;
+            list-style: none;
+            a {
+                @extend %headingFontStyle;
+                padding: $unit 2 * $unit;
+                color: black;
+                display: block;
+                font: {
+                    weight: bold;
+                }
+                text: {
+                    decoration: none;
+                    transform: lowercase;
+                }
+                border: $border-style {
+                    radius: $unit / 4 $unit / 4 0 0;
+                    bottom: {
+                        style: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes curtain {
+    0% {
+        grid-gap: $unit * 3;
+    }
+
+    100% {
+        grid-gap: $unit * 1.5;
+    }
+}
+
+.main {
+    margin: {
+        top: $unit;
+    }
+    article {
+        .color-scheme span {
+            width: $unit;
+            height: $unit;
+            border-radius: 50%;
+            margin-right: $unit;
+            display: inline-block;
+        }
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        display: flex;
+        $rotateDegree: 1deg;
+        margin-top: $unit * 2;
+        $lightnessAmount: 50%;
+        $backgroundSelectors: "4n + 0" ($light-salmon, $mindaro, $mindaro) $accent-primary,
+            "4n + 1" ($accent-quaternary, $baby-blue, $accent-tertiary) $accent-secondary,
+            "4n + 2" ($accent-quaternary, $orange-yellow-crayola, $accent-tertiary)
+                color.scale($accent-primary, $alpha: -40%),
+            "4n + 3" ($accent-quaternary, lighten($baby-blue, 12%), $french-pink) $accent-quaternary;
+
+        // Create a sequence of background for n*0th, n*1th, n*2th, n*3th articles
+        $i: 0;
+        @each $nSelector, $bgColor, $borderColor in $backgroundSelectors {
+            &:nth-child(#{$nSelector}) {
+                div {
+                    border:none;
+                    background: $bgColor;
+                    @include gradient(41deg * $i, 20%, $bgColor);
+                    div {
+                        background: none;
+                        border: {
+                            width: 2px;
+                            color: color.scale($borderColor, $alpha: -10%);
+                            style: solid;
+                        }
+                    }
+                }
+            }
+            $i: $i + 1;
+        }
+
+        // rotate odd articles clockwise and even counter-clockwise
+        $i: 0;
+        @each $nSelector in "odd", "even" {
+            &:nth-child(#{$nSelector}) {
+                div {
+                    transform: rotate($rotateDegree * 1.5 * negator($i));
+                    div {
+                        transform: rotate(-$rotateDegree * 2 * negator($i));
+                        & > * {
+                            transform: rotate($rotateDegree * 0.5 * negator($i));
+                        }
+                    }
+                }
+                $i: $i + 1;
+            }
+        }
+
+        div {
+            display: flex;
+            padding: 0;
+            div {
+                display: block;
+                width: 100%;
+                padding: $unit * 2;
+                position: relative;
+                z-index: -1;
+                margin: 0 -$unit * 0.25;
+            }
+        }
+    }
+}
+
+footer {
+    margin: {
+        top: $unit;
+    }
+}
+
+.no-margin {
+    margin: 0;
+}

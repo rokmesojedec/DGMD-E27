@@ -1,0 +1,26 @@
+$grid-columns-count: 2;
+
+@mixin columnPercentages($count, $property) {
+    $columnValues: ();
+    $size: 100% / $count;
+    @for $i from 1 through $count {
+        $columnValues: append($columnValues, $size, space);
+    }
+    #{$property}: $columnValues;
+}
+
+#layout {
+    margin: 0 auto;
+    display: grid;
+    grid {
+        gap: $unit;
+    }
+}
+
+.main {
+    @for $i from 1 through 12 {
+        article.col-#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}

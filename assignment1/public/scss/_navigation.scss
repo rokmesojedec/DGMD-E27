@@ -1,0 +1,21 @@
+
+ul {
+    li {
+        a{
+            padding: $unit 2*$unit;
+            text-decoration: none;
+            color: black;
+            font: {
+                weight: bold;  
+            }
+            text-transform: uppercase;
+            border: $border-style {
+              
+                radius: $unit / 4 $unit / 4 0 0;
+                bottom: {
+                    style: none;
+                }
+            }
+        }
+    }
+}
