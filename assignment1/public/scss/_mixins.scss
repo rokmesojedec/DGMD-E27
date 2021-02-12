@@ -1,16 +1,22 @@
+// Mixins are stored here!
+//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*//
+
+// creates media query, can be specificed to only affect a range
+// for example from min-width and max-width
 @mixin mediaQuery($from, $to: null) {
+    // If example
     @if ($to) and not ($from) {
         @media (max-width: $from) {
             @content;
         }
     }
-
+    // If example
     @if ($from) and not ($to) {
         @media (min-width: $from) {
             @content;
         }
     }
-
+    // If example
     @if ($from) and ($to) {
         @media (min-width: $from) and (max-width: $to) {
             @content;
@@ -18,10 +24,33 @@
     }
 }
 
-@mixin gradient($degrees, $lighten: 0%, $colors){
-    background: nth($colors, 1);
+// rotate odd articles clockwise and even counter-clockwise
+@mixin rotator($rotateDegree) {
+    $i: 0;
+    // loop example
+    @each $nSelector in "odd", "even" {
+        &:nth-child(#{$nSelector}) {
+            div {
+                transform: rotate($rotateDegree * 1.5 * negator($i));
+                div {
+                    transform: rotate(-$rotateDegree * 2 * negator($i));
+                    & > * {
+                        transform: rotate($rotateDegree * 0.5 * negator($i));
+                    }
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
+
+// creates gradient rule
+@mixin gradient($degrees, $lighten: 0%, $colors) {
     $colorValues: ();
+    background: nth($colors, 1);
+    // loop example
     @each $color in $colors {
+        // SASS functions example
         $colorValues: append($colorValues, lighten($color, $lighten), comma);
     }
     background: linear-gradient($degrees, $colorValues);

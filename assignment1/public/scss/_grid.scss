@@ -1,13 +1,5 @@
-$grid-columns-count: 2;
-
-@mixin columnPercentages($count, $property) {
-    $columnValues: ();
-    $size: 100% / $count;
-    @for $i from 1 through $count {
-        $columnValues: append($columnValues, $size, space);
-    }
-    #{$property}: $columnValues;
-}
+// Grid global settings
+//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*//
 
 #layout {
     margin: 0 auto;
@@ -15,12 +7,12 @@ $grid-columns-count: 2;
     grid {
         gap: $unit;
     }
-}
-
-.main {
-    @for $i from 1 through 12 {
-        article.col-#{$i} {
-            grid-column-end: span $i;
+    // Creates utility classes for grid columns
+    .main {
+        @for $i from 1 through $grid-column-count {
+            article.col-#{$i} {
+                grid-column-end: span $i;
+            }
         }
     }
 }

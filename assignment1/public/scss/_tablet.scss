@@ -1,29 +1,8 @@
 @include mediaQuery($site-width) {
-    $columnCount: 2;
-    $halfPoint: ($columnCount / 2 + 1);
-
-    %fullWidth {
-        grid-column: {
-            start: 1;
-            end: $columnCount + 1;
-        }
-    }
-
-    %firstHalfWidth {
-        grid-column: {
-            start: 1;
-            end: $halfPoint;
-        }
-    }
-
-    %secondHalfWidth {
-        grid-column: $halfPoint / $columnCount + 1;
-    }
-
     header,
     .main {
+        grid-column: span 2;
         display: grid;
-        @extend %fullWidth;
     }
 
     #layout {
@@ -47,11 +26,12 @@
     .main {
         grid-gap: $unit * 1.5;
         grid-template: {
-            /* The VS Code linter doesn't like this, but it does compile properly into CSS */
-            columns: repeat(12, 1fr);
+            columns: repeat($grid-column-count, 1fr);
             rows: auto 1fr;
         }
         article {
+            @include rotator(1.25deg);
+            display: flex;
             border-radius: 5px;
             margin-top: 0;
             @each $n in 1, 2 {
@@ -62,6 +42,11 @@
             grid-column-end: span 4;
             div {
                 border-radius: 5px;
+                div {
+                    img {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -70,7 +55,7 @@
             margin: 0;
         }
         nav {
-            @extend %secondHalfWidth;
+            grid-column: 2 / 3;
             ul {
                 display: flex;
                 li {

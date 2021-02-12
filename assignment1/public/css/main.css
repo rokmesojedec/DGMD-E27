@@ -19,41 +19,40 @@ ul li a {
 #layout grid {
   gap: 1rem;
 }
-
-.main article.col-1 {
+#layout .main article.col-1 {
   grid-column-end: span 1;
 }
-.main article.col-2 {
+#layout .main article.col-2 {
   grid-column-end: span 2;
 }
-.main article.col-3 {
+#layout .main article.col-3 {
   grid-column-end: span 3;
 }
-.main article.col-4 {
+#layout .main article.col-4 {
   grid-column-end: span 4;
 }
-.main article.col-5 {
+#layout .main article.col-5 {
   grid-column-end: span 5;
 }
-.main article.col-6 {
+#layout .main article.col-6 {
   grid-column-end: span 6;
 }
-.main article.col-7 {
+#layout .main article.col-7 {
   grid-column-end: span 7;
 }
-.main article.col-8 {
+#layout .main article.col-8 {
   grid-column-end: span 8;
 }
-.main article.col-9 {
+#layout .main article.col-9 {
   grid-column-end: span 9;
 }
-.main article.col-10 {
+#layout .main article.col-10 {
   grid-column-end: span 10;
 }
-.main article.col-11 {
+#layout .main article.col-11 {
   grid-column-end: span 11;
 }
-.main article.col-12 {
+#layout .main article.col-12 {
   grid-column-end: span 12;
 }
 
@@ -63,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  text-shadow: 3px 3px 2px rgba(236, 255, 133, 0.8), -3px 3px 2px rgba(133, 220, 255, 0.8), 0px 2px #ff70a6ff, -6px 2px rgba(255, 167, 133, 0.8);
+  text-shadow: 3px 3px 2px #ecff85, -3px 3px 2px #85dcff, 0px 2px #ff70a6ff, -6px 2px #ffa785;
   font-family: "Major Mono Display", monospace;
 }
 
@@ -75,7 +74,7 @@ html {
 }
 
 body {
-  padding: 1rem;
+  margin: 2rem;
 }
 
 h1,
@@ -85,7 +84,7 @@ h4,
 h5,
 h6 {
   color: rgba(0, 25, 36, 0.87);
-  text-transform: lowercase;
+  text-transform: capitalize;
   margin: 0;
 }
 
@@ -118,6 +117,12 @@ nav ul li {
   display: inline;
   list-style: none;
 }
+nav ul li.selected a {
+  background: #70d6ffff;
+  background: linear-gradient(41deg, #f0fbff, #fdfff0, #fdfff0);
+  text-transform: capitalize;
+  text-shadow: 3px 3px 2px #ecff85, -3px 3px 2px #85dcff, 3px -3px 2px rgba(255, 133, 179, 0.92), -3px -3px 2px #ffa785;
+}
 nav ul li a {
   padding: 1rem 2rem;
   color: black;
@@ -130,20 +135,29 @@ nav ul li a {
   border-bottom-style: none;
 }
 
-@keyframes curtain {
-  0% {
-    grid-gap: 3rem;
-  }
-  100% {
-    grid-gap: 1.5rem;
-  }
-}
 .main {
   margin-top: 1rem;
 }
 .main article {
-  display: flex;
   margin-top: 2rem;
+}
+.main article:nth-child(odd) div {
+  transform: rotate(-0.75deg);
+}
+.main article:nth-child(odd) div div {
+  transform: rotate(1deg);
+}
+.main article:nth-child(odd) div div > * {
+  transform: rotate(-0.25deg);
+}
+.main article:nth-child(even) div {
+  transform: rotate(0.75deg);
+}
+.main article:nth-child(even) div div {
+  transform: rotate(-1deg);
+}
+.main article:nth-child(even) div div > * {
+  transform: rotate(0.25deg);
 }
 .main article .color-scheme span {
   width: 1rem;
@@ -159,72 +173,6 @@ nav ul li a {
 .main article h2 {
   margin-top: 0;
 }
-.main article:nth-child(4n+0) div {
-  border: none;
-  background: #ff9770ff, #e9ff70ff, #e9ff70ff;
-  background: #ff9770ff;
-  background: linear-gradient(0deg, #ffe1d6, #f9ffd6, #f9ffd6);
-}
-.main article:nth-child(4n+0) div div {
-  background: none;
-  border-width: 2px;
-  border-color: rgba(112, 214, 255, 0.9);
-  border-style: solid;
-}
-.main article:nth-child(4n+1) div {
-  border: none;
-  background: #ff9770ff, #70d6ffff, #e9ff70ff;
-  background: #ff9770ff;
-  background: linear-gradient(41deg, #ffe1d6, #d6f3ff, #f9ffd6);
-}
-.main article:nth-child(4n+1) div div {
-  background: none;
-  border-width: 2px;
-  border-color: rgba(255, 214, 112, 0.9);
-  border-style: solid;
-}
-.main article:nth-child(4n+2) div {
-  border: none;
-  background: #ff9770ff, #ffd670ff, #e9ff70ff;
-  background: #ff9770ff;
-  background: linear-gradient(82deg, #ffe1d6, #fff3d6, #f9ffd6);
-}
-.main article:nth-child(4n+2) div div {
-  background: none;
-  border-width: 2px;
-  border-color: rgba(112, 214, 255, 0.54);
-  border-style: solid;
-}
-.main article:nth-child(4n+3) div {
-  border: none;
-  background: #ff9770ff, #ade8ff, #ff70a6ff;
-  background: #ff9770ff;
-  background: linear-gradient(123deg, #ffe1d6, white, #ffd6e5);
-}
-.main article:nth-child(4n+3) div div {
-  background: none;
-  border-width: 2px;
-  border-color: rgba(255, 151, 112, 0.9);
-  border-style: solid;
-}
-.main article:nth-child(odd) div {
-  transform: rotate(-1.5deg);
-}
-.main article:nth-child(odd) div div {
-  transform: rotate(2deg);
-}
-.main article:nth-child(odd) div div > * {
-  transform: rotate(-0.5deg);
-}
-.main article:nth-child(even) div {
-  transform: rotate(1.5deg);
-}
-.main article:nth-child(even) div div {
-  transform: rotate(-2deg);
-}
-.main article:nth-child(even) div div > * {
-  transform: rotate(0.5deg);
-}
 .main article div {
   display: flex;
   padding: 0;
@@ -236,6 +184,54 @@ nav ul li a {
   position: relative;
   z-index: -1;
   margin: -0.25rem;
+}
+.main article div div img {
+  margin-top: 1rem;
+  width: 100%;
+}
+.main article:nth-child(4n+0) div {
+  border: none;
+  background: #ff9770ff;
+  background: linear-gradient(0deg, #ffe1d6, #f9ffd6, #f9ffd6);
+}
+.main article:nth-child(4n+0) div div {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(112, 214, 255, 0.9);
+}
+.main article:nth-child(4n+1) div {
+  border: none;
+  background: #ff9770ff;
+  background: linear-gradient(41deg, #ffe1d6, #d6f3ff, #f9ffd6);
+}
+.main article:nth-child(4n+1) div div {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 214, 112, 0.9);
+}
+.main article:nth-child(4n+2) div {
+  border: none;
+  background: #70d6ffff;
+  background: linear-gradient(82deg, #d6f3ff, #d6f3ff, #a3e5ff);
+}
+.main article:nth-child(4n+2) div div {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 207, 87, 0.9);
+}
+.main article:nth-child(4n+3) div {
+  border: none;
+  background: #ff9770ff;
+  background: linear-gradient(123deg, #ffe1d6, #ffd6e5, #f5fcff);
+}
+.main article:nth-child(4n+3) div div {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 112, 166, 0.9);
 }
 
 footer {
@@ -249,16 +245,7 @@ footer {
 @media (min-width: 1050px) {
   header,
 .main {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-  header nav {
-    grid-column: 2;
-  }
-
-  header,
-.main {
+    grid-column: span 2;
     display: grid;
   }
 
@@ -276,14 +263,32 @@ footer {
 
   .main {
     grid-gap: 1.5rem;
-    /* The VS Code linter doesn't like this, but it does compile properly into CSS */
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 1fr;
   }
   .main article {
+    display: flex;
     border-radius: 5px;
     margin-top: 0;
     grid-column-end: span 4;
+  }
+  .main article:nth-child(odd) div {
+    transform: rotate(-1.875deg);
+  }
+  .main article:nth-child(odd) div div {
+    transform: rotate(2.5deg);
+  }
+  .main article:nth-child(odd) div div > * {
+    transform: rotate(-0.625deg);
+  }
+  .main article:nth-child(even) div {
+    transform: rotate(1.875deg);
+  }
+  .main article:nth-child(even) div div {
+    transform: rotate(-2.5deg);
+  }
+  .main article:nth-child(even) div div > * {
+    transform: rotate(0.625deg);
   }
   .main article:nth-child(1) {
     grid-column-end: span 4;
@@ -294,9 +299,15 @@ footer {
   .main article div {
     border-radius: 5px;
   }
+  .main article div div img {
+    width: 100%;
+  }
 
   header h1 {
     margin: 0;
+  }
+  header nav {
+    grid-column: 2/3;
   }
   header nav ul {
     display: flex;

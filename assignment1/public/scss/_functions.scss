@@ -1,6 +1,47 @@
-@function negator($val){
-    @if $val % 2 == 0 {
+// Functions are stored here
+//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*//
+
+// Returns 1 or -1 whether the number is divisable by modvalue
+@function negator($val, $modValue: 2, $treshold: null) {
+    @if ($treshold){
+        @if $val >= $treshold {
+            @return -1;
+        }
+    }
+    // If / else example
+    @if $val % $modValue == 0 {
         @return -1;
-    } 
+    }
     @return 1;
 }
+
+// lightenss and adds transparency to a color value
+@function lighterColor($color, $l: 15%, $a: -20%) {
+    @return color.scale($color, $lightness: $l, $alpha: -$a);
+}
+
+@function inc($val) {
+    @return $val + 1;
+}
+
+// creates text-shadows props from colors on top, bottom, left, right of text
+@function misprintShadows($colors, $hMisprintSize: 3px, $widthMisprintSize: 3px, $blurSize: 2px) {
+    $output: ();
+    $counter: 1;
+    @each $color in $colors {
+        $textShadowProps: ();
+
+        $textShadowProps: append($textShadowProps, $hMisprintSize * negator($counter, 3, 6), space);
+        $counter: inc($counter);
+
+        $textShadowProps: append($textShadowProps, $widthMisprintSize * negator($counter, 3, 6), space);
+        $counter: inc($counter);
+
+        $textShadowProps: append($textShadowProps, $blurSize, space);
+        $textShadowProps: append($textShadowProps, lighterColor($color), space);
+
+        $output: append($output, $textShadowProps, comma);
+    }
+    @return $output;
+}
+

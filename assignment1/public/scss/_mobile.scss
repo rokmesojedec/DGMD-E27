@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    padding: $unit;
+    margin: $unit * 2;
 }
 
 h1,
@@ -27,8 +27,9 @@ h4,
 h5,
 h6 {
     color: color.scale(darken($accent-primary, 65%), $alpha: -13%);
-    text-transform: lowercase;
+    text-transform: capitalize;
     margin: 0;
+    // Extend is used here
     @extend %headingFontStyle;
 }
 
@@ -64,7 +65,16 @@ nav {
         li {
             display: inline;
             list-style: none;
+            &.selected  {
+                a {
+                    // mixin use
+                    @include gradient(41deg, 25%, ($accent-primary, $accent-tertiary, $accent-tertiary));
+                    text-transform: capitalize;
+                    text-shadow: $link-text-shadow-style;
+                }
+            }
             a {
+                // Extend is used here
                 @extend %headingFontStyle;
                 padding: $unit 2 * $unit;
                 color: black;
@@ -86,21 +96,15 @@ nav {
         }
     }
 }
-@keyframes curtain {
-    0% {
-        grid-gap: $unit * 3;
-    }
-
-    100% {
-        grid-gap: $unit * 1.5;
-    }
-}
-
+// lots of nesting demonstrated here
 .main {
     margin: {
         top: $unit;
     }
     article {
+        // mixin used
+        @include rotator(0.5deg);
+
         .color-scheme span {
             width: $unit;
             height: $unit;
@@ -115,58 +119,15 @@ nav {
         h2 {
             margin-top: 0;
         }
-        display: flex;
-        $rotateDegree: 1deg;
-        margin-top: $unit * 2;
-        $lightnessAmount: 50%;
-        $backgroundSelectors: "4n + 0" ($light-salmon, $mindaro, $mindaro) $accent-primary,
-            "4n + 1" ($accent-quaternary, $baby-blue, $accent-tertiary) $accent-secondary,
-            "4n + 2" ($accent-quaternary, $orange-yellow-crayola, $accent-tertiary)
-                color.scale($accent-primary, $alpha: -40%),
-            "4n + 3" ($accent-quaternary, lighten($baby-blue, 12%), $french-pink) $accent-quaternary;
-
-        // Create a sequence of background for n*0th, n*1th, n*2th, n*3th articles
-        $i: 0;
-        @each $nSelector, $bgColor, $borderColor in $backgroundSelectors {
-            &:nth-child(#{$nSelector}) {
-                div {
-                    border:none;
-                    background: $bgColor;
-                    @include gradient(41deg * $i, 20%, $bgColor);
-                    div {
-                        background: none;
-                        border: {
-                            width: 2px;
-                            color: color.scale($borderColor, $alpha: -10%);
-                            style: solid;
-                        }
-                    }
-                }
-            }
-            $i: $i + 1;
-        }
-
-        // rotate odd articles clockwise and even counter-clockwise
-        $i: 0;
-        @each $nSelector in "odd", "even" {
-            &:nth-child(#{$nSelector}) {
-                div {
-                    transform: rotate($rotateDegree * 1.5 * negator($i));
-                    div {
-                        transform: rotate(-$rotateDegree * 2 * negator($i));
-                        & > * {
-                            transform: rotate($rotateDegree * 0.5 * negator($i));
-                        }
-                    }
-                }
-                $i: $i + 1;
-            }
-        }
 
         div {
             display: flex;
             padding: 0;
             div {
+                img {
+                    margin-top: $unit;
+                    width: 100%;
+                }
                 display: block;
                 width: 100%;
                 padding: $unit * 2;
@@ -174,6 +135,47 @@ nav {
                 z-index: -1;
                 margin: 0 -$unit * 0.25;
             }
+        }
+
+        margin-top: $unit * 2;
+        $lightnessAmount: 50%;
+
+        $backgroundSelectors: "4n + 0" ($light-salmon, $mindaro, $mindaro) $accent-primary,
+            "4n + 1" ($accent-quaternary, $baby-blue, $accent-tertiary) $accent-secondary,
+            "4n + 2" ($baby-blue, $baby-blue, darken($baby-blue, 10%)) darken($orange-yellow-crayola, 5%),
+            // SASS Built in function used
+            "4n + 3" (
+                    $accent-quaternary,
+                    $french-pink,
+                    lighten($baby-blue, 6%)
+                ) $french-pink; // SASS Built in function used
+
+        // Create a sequence of background for n*0th, n*1th, n*2th, n*3th articles
+        $i: 0;
+        $overrideBorderColor: null;
+        // loop example
+        @each $nSelector, $bgColor, $borderColor in $backgroundSelectors {
+            &:nth-child(#{$nSelector}) {
+                div {
+                    border: none;
+                    @include gradient(41deg * $i, 20%, $bgColor);
+                    div {
+                        background: none;
+                        border: {
+                            width: 2px;
+                            style: solid;
+                        }
+                        // if / else
+                        @if ($overrideBorderColor) {
+                            border-color: $overrideBorderColor;
+                        } @else {
+                            // SASS Built in function used
+                            border-color: color.scale($borderColor, $alpha: -10%);
+                        }
+                    }
+                }
+            }
+            $i: $i + 1;
         }
     }
 }
