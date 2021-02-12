@@ -24,6 +24,7 @@
     }
 }
 
+// custom mixin
 // rotate odd articles clockwise and even counter-clockwise
 @mixin rotator($rotateDegree) {
     $i: 0;
