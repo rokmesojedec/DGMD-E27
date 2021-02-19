@@ -8,7 +8,7 @@
         gap: $unit;
     }
     // Creates utility classes for grid columns
-    .main {
+    main {
         @for $i from 1 through $grid-column-count {
             article.col-#{$i} {
                 grid-column-end: span $i;

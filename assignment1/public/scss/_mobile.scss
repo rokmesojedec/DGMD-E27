@@ -13,6 +13,7 @@ html {
     padding: 0;
     margin: 0;
     font: {
+        size: $base-font-size;
         family: $font-stack;
     }
 }
@@ -21,13 +22,17 @@ body {
     margin: $unit * 2;
 }
 
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: color.scale(darken($accent-primary, 65%), $alpha: -13%);
+    color: color.scale(darken($accent-primary, 65%), $alpha: -13%); // sass function used
     text-transform: capitalize;
     margin: 0;
     // Extend is used here
@@ -99,7 +104,7 @@ nav {
 }
 
 // lots of nesting demonstrated here
-.main {
+main {
     margin: {
         top: $unit;
     }
@@ -140,17 +145,12 @@ nav {
         }
 
         margin-top: $unit * 2;
-        $lightnessAmount: 50%;
 
-        $backgroundSelectors: "4n + 0" ($light-salmon, $mindaro, $mindaro) $accent-primary,
+        $backgroundSelectors: 
+            "4n + 0" ($light-salmon, $mindaro, $mindaro) $accent-primary,
             "4n + 1" ($accent-quaternary, $baby-blue, $accent-tertiary) $accent-secondary,
-            "4n + 2" ($baby-blue, $baby-blue, darken($baby-blue, 10%)) darken($orange-yellow-crayola, 5%),
-            // SASS Built in function used
-            "4n + 3" (
-                    $accent-quaternary,
-                    $french-pink,
-                    lighten($baby-blue, 6%)
-                ) $french-pink; // SASS Built in function used
+            "4n + 2" ($baby-blue, $baby-blue, darken($baby-blue, 10%)) darken($orange-yellow-crayola, 5%), // SASS Built in function used
+            "4n + 3" ($accent-quaternary, $french-pink, lighten($baby-blue, 6%)) $french-pink; // SASS Built in function used
 
         // Create a sequence of background for n*0th, n*1th, n*2th, n*3th articles
         $i: 0;

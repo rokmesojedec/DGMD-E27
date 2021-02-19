@@ -1,6 +1,6 @@
 @include mediaQuery($site-width) {
     header,
-    .main {
+    main {
         grid-column: span 2;
         display: grid;
     }
@@ -23,7 +23,7 @@
         }
     }
 
-    .main {
+    main {
         grid-gap: $unit * 1.5;
         grid-template: {
             columns: repeat($grid-column-count, 1fr);
@@ -41,6 +41,7 @@
             }
             grid-column-end: span 4;
             div {
+                flex-basis: 100%;
                 border-radius: 5px;
                 div {
                     img {

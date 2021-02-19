@@ -19,40 +19,40 @@ ul li a {
 #layout grid {
   gap: 1rem;
 }
-#layout .main article.col-1 {
+#layout main article.col-1 {
   grid-column-end: span 1;
 }
-#layout .main article.col-2 {
+#layout main article.col-2 {
   grid-column-end: span 2;
 }
-#layout .main article.col-3 {
+#layout main article.col-3 {
   grid-column-end: span 3;
 }
-#layout .main article.col-4 {
+#layout main article.col-4 {
   grid-column-end: span 4;
 }
-#layout .main article.col-5 {
+#layout main article.col-5 {
   grid-column-end: span 5;
 }
-#layout .main article.col-6 {
+#layout main article.col-6 {
   grid-column-end: span 6;
 }
-#layout .main article.col-7 {
+#layout main article.col-7 {
   grid-column-end: span 7;
 }
-#layout .main article.col-8 {
+#layout main article.col-8 {
   grid-column-end: span 8;
 }
-#layout .main article.col-9 {
+#layout main article.col-9 {
   grid-column-end: span 9;
 }
-#layout .main article.col-10 {
+#layout main article.col-10 {
   grid-column-end: span 10;
 }
-#layout .main article.col-11 {
+#layout main article.col-11 {
   grid-column-end: span 11;
 }
-#layout .main article.col-12 {
+#layout main article.col-12 {
   grid-column-end: span 12;
 }
 
@@ -70,11 +70,16 @@ body,
 html {
   padding: 0;
   margin: 0;
+  font-size: 16px;
   font-family: "IBM Plex Sans", sans-serif;
 }
 
 body {
   margin: 2rem;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
 }
 
 h1,
@@ -135,49 +140,49 @@ nav ul li a {
   border-bottom-style: none;
 }
 
-.main {
+main {
   margin-top: 1rem;
 }
-.main article {
+main article {
   margin-top: 2rem;
 }
-.main article:nth-child(odd) div {
+main article:nth-child(odd) div {
   transform: rotate(-0.75deg);
 }
-.main article:nth-child(odd) div div {
+main article:nth-child(odd) div div {
   transform: rotate(1deg);
 }
-.main article:nth-child(odd) div div > * {
+main article:nth-child(odd) div div > * {
   transform: rotate(-0.25deg);
 }
-.main article:nth-child(even) div {
+main article:nth-child(even) div {
   transform: rotate(0.75deg);
 }
-.main article:nth-child(even) div div {
+main article:nth-child(even) div div {
   transform: rotate(-1deg);
 }
-.main article:nth-child(even) div div > * {
+main article:nth-child(even) div div > * {
   transform: rotate(0.25deg);
 }
-.main article .color-scheme span {
+main article .color-scheme span {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
   margin-right: 1rem;
   display: inline-block;
 }
-.main article ul {
+main article ul {
   padding-left: 0;
   list-style: none;
 }
-.main article h2 {
+main article h2 {
   margin-top: 0;
 }
-.main article div {
+main article div {
   display: flex;
   padding: 0;
 }
-.main article div div {
+main article div div {
   display: block;
   width: 100%;
   padding: 2rem;
@@ -185,49 +190,49 @@ nav ul li a {
   z-index: -1;
   margin: -0.25rem;
 }
-.main article div div img {
+main article div div img {
   margin-top: 1rem;
   width: 100%;
 }
-.main article:nth-child(4n+0) div {
+main article:nth-child(4n+0) div {
   border: none;
   background: #ff9770ff;
   background: linear-gradient(0deg, #ffe1d6, #f9ffd6, #f9ffd6);
 }
-.main article:nth-child(4n+0) div div {
+main article:nth-child(4n+0) div div {
   background: none;
   border-width: 2px;
   border-style: solid;
   border-color: rgba(112, 214, 255, 0.9);
 }
-.main article:nth-child(4n+1) div {
+main article:nth-child(4n+1) div {
   border: none;
   background: #ff9770ff;
   background: linear-gradient(41deg, #ffe1d6, #d6f3ff, #f9ffd6);
 }
-.main article:nth-child(4n+1) div div {
+main article:nth-child(4n+1) div div {
   background: none;
   border-width: 2px;
   border-style: solid;
   border-color: rgba(255, 214, 112, 0.9);
 }
-.main article:nth-child(4n+2) div {
+main article:nth-child(4n+2) div {
   border: none;
   background: #70d6ffff;
   background: linear-gradient(82deg, #d6f3ff, #d6f3ff, #a3e5ff);
 }
-.main article:nth-child(4n+2) div div {
+main article:nth-child(4n+2) div div {
   background: none;
   border-width: 2px;
   border-style: solid;
   border-color: rgba(255, 207, 87, 0.9);
 }
-.main article:nth-child(4n+3) div {
+main article:nth-child(4n+3) div {
   border: none;
   background: #ff9770ff;
   background: linear-gradient(123deg, #ffe1d6, #ffd6e5, #f5fcff);
 }
-.main article:nth-child(4n+3) div div {
+main article:nth-child(4n+3) div div {
   background: none;
   border-width: 2px;
   border-style: solid;
@@ -244,7 +249,7 @@ footer {
 
 @media (min-width: 1050px) {
   header,
-.main {
+main {
     grid-column: span 2;
     display: grid;
   }
@@ -261,45 +266,46 @@ footer {
     display: inline;
   }
 
-  .main {
+  main {
     grid-gap: 1.5rem;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 1fr;
   }
-  .main article {
+  main article {
     display: flex;
     border-radius: 5px;
     margin-top: 0;
     grid-column-end: span 4;
   }
-  .main article:nth-child(odd) div {
+  main article:nth-child(odd) div {
     transform: rotate(-1.875deg);
   }
-  .main article:nth-child(odd) div div {
+  main article:nth-child(odd) div div {
     transform: rotate(2.5deg);
   }
-  .main article:nth-child(odd) div div > * {
+  main article:nth-child(odd) div div > * {
     transform: rotate(-0.625deg);
   }
-  .main article:nth-child(even) div {
+  main article:nth-child(even) div {
     transform: rotate(1.875deg);
   }
-  .main article:nth-child(even) div div {
+  main article:nth-child(even) div div {
     transform: rotate(-2.5deg);
   }
-  .main article:nth-child(even) div div > * {
+  main article:nth-child(even) div div > * {
     transform: rotate(0.625deg);
   }
-  .main article:nth-child(1) {
+  main article:nth-child(1) {
     grid-column-end: span 4;
   }
-  .main article:nth-child(2) {
+  main article:nth-child(2) {
     grid-column-end: span 8;
   }
-  .main article div {
+  main article div {
+    flex-basis: 100%;
     border-radius: 5px;
   }
-  .main article div div img {
+  main article div div img {
     width: 100%;
   }
 
