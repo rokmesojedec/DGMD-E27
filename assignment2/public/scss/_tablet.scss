@@ -73,6 +73,7 @@
     }
 
     main {
+        --list-item-span-margin: 0.25rem;
         margin: {
             top: var(--unit);
         }

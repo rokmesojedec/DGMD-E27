@@ -1,7 +1,6 @@
 // Variables are stored here!
 //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*//
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 
@@ -28,6 +27,8 @@ $border-style: 2px solid color.scale($font-color, $alpha: -35%);
 
 $column-count: 12;
 $unit: 0.75rem;
+$headingBottomMargin: 0;
+$lipadding: 0;
 $site-width: 1080px;
 $desktop-width: 1600px;
 $base-font-size: 16px;

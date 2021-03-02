@@ -36,6 +36,7 @@ h6 {
     color: color.scale(darken($accent-primary, 65%), $alpha: -13%); // sass function used
     text-transform: capitalize;
     margin: 0;
+    margin-bottom: var(--heading-margin);
     // Extend is used here
     @extend %headingFontStyle;
 }
@@ -121,6 +122,11 @@ main {
         ul {
             padding-left: 0;
             list-style: none;
+            li{
+                span{
+                    margin: var(--list-item-span-margin) 0;
+                }
+            }
         }
         h2 {
             margin-top: 0;

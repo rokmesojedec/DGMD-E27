@@ -1,12 +1,13 @@
 :root{
-    --unit:              #{$unit};
-    --base-font-size:    #{$base-font-size};
-    --border-width:      #{$base-border-width};
-    --font-color:        #{$font-color};
-    --secondary-color:   #{$secondary-color};
-    --accent-primary:    #{$accent-primary};
-    --accent-secondary:  #{$accent-secondary};
-    --accent-tertiary:   #{$accent-tertiary};
-    --accent-quaternary: #{$accent-quaternary};
-    --column-count:      #{$column-count};
+    --unit:                #{$unit};
+    --base-font-size:      #{$base-font-size};
+    --border-width:        #{$base-border-width};
+    --font-color:          #{$font-color};
+    --secondary-color:     #{$secondary-color};
+    --accent-primary:      #{$accent-primary};
+    --accent-secondary:    #{$accent-secondary};
+    --accent-tertiary:     #{$accent-tertiary};
+    --accent-quaternary:   #{$accent-quaternary};
+    --column-count:        #{$column-count};
+    --listItemSpanMargin:  #{$lipadding};
 }
