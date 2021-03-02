@@ -1,0 +1,18 @@
+ul {
+    li {
+        a{
+            padding: var(--unit)  calc(var(--unit) * 2);
+            text-decoration: none;
+            color: var(--font-color);
+            font: {
+                weight: bold;  
+            }
+            text-transform: uppercase;
+            border: $border-style {
+                bottom: {
+                    style: none;
+                }
+            }
+        }
+    }
+}

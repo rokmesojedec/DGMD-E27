@@ -1,0 +1,150 @@
+@include mediaQuery($site-width) {
+    :root {
+        --scale: #{$tablet-font-scale};
+        --unit: 1.5rem;
+    }
+    header,
+    main {
+        @if $layout-type == "flex" {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            gap: var(--unit);
+        }
+        @if $layout-type == "grid" {
+            grid-column: span 2;
+            display: grid;
+        }
+    }
+
+    header {
+        align-items: baseline;
+        --unit: 0.75rem;
+    }
+
+    #layout {
+        min-width: 880px;
+        width: calc(#{$site-width} - (var(--unit) * 2));
+
+        @if $layout-type == "grid" {
+            --gap: calc(var(--unit) / 2);
+            margin: 0 auto;
+            display: grid;
+            grid {
+                gap: var(--gap);
+            }
+        }
+    }
+
+    header {
+        h1 {
+            margin: 0;
+        }
+        nav {
+            align-items: flex-end;
+            display: flex;
+            @if $layout-type == "grid" {
+                grid-column: 2 / 3;
+            }
+            ul {
+                display: flex;
+
+                li {
+                    display: flex;
+
+                    & + li {
+                        margin-left: calc(var(--unit) / 2);
+                    }
+                    a {
+                        display: inline;
+                        font: {
+                            size: scaleValue($base-font-size, $tablet-font-scale, false);
+                        }
+                        border: $border-style {
+                            radius: calc(var(--unit) / 4) calc(var(--unit) / 4) 0 0;
+                            bottom: {
+                                style: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        margin: {
+            top: var(--unit);
+        }
+
+        @if $layout-type == "grid" {
+            grid-gap: calc(var(--unit));
+            grid-template: {
+                columns: repeat(var(--column-count), 1fr);
+                rows: auto 1fr;
+            }
+        }
+
+        article {
+            @include rotator(1.25deg);
+            display: flex;
+            border-radius: 5px;
+            margin-top: 0;
+
+            ///////////// FLEX LAYOUT MODE
+            /////////////////////////////////////////////////////////////////////////////////
+            @if $layout-type == "flex" {
+                --default-width: calc(var(--column-count) / 3);
+                --gap: calc((var(--column-count) - var(--default-width)) * 0.2%);
+                --basis: calc((var(--default-width) / var(--column-count)) * 100%);
+                flex-basis: calc(var(--basis) - var(--gap));
+
+                // first article should take 1/3 of row and the second 2/3
+                @each $n in 1, 2 {
+                    &:nth-child(#{$n}) {
+                        --width: calc(#{$n} * var(--default-width));
+                        --gap: calc((var(--column-count) - var(--width)) * 0.2%);
+                        --basis: calc(var(--width) / var(--column-count) * 100%);
+                    }
+                }
+
+                // create utility columns for flexbox grid
+                // col-1 through col-12
+                @for $i from 1 through $grid-column-count {
+                    &.col-#{$i} {
+                        --width: #{$i};
+                        --gap: calc((var(--column-count) - var(--width)) * 0.2%);
+                        --basis: calc(var(--width) / var(--column-count) * 100%);
+                    }
+                }
+            }
+
+            ///////////// GRID LAYOUT MODE
+            /////////////////////////////////////////////////////////////////////////////////
+            @if $layout-type == "grid" {
+                @each $n in 1, 2 {
+                    &:nth-child(#{$n}) {
+                        grid-column-end: span calc(#{$n} * 4);
+                    }
+                }
+                @for $i from 1 through $grid-column-count {
+                    &.col-#{$i} {
+                        grid-column-end: span $i;
+                    }
+                }
+                grid-column-end: span 4;
+            }
+
+            div {
+                flex-basis: 100%;
+                border-radius: 5px;
+                div {
+                    img {
+                        width: 100%;
+                    }
+                    padding: var(--unit);
+                }
+            }
+        }
+    }
+}

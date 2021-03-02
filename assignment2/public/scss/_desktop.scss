@@ -1,0 +1,26 @@
+@include mediaQuery($desktop-width) {
+    main {
+        --unit: 2rem;
+    }
+    :root {
+        --scale: #{$desktop-scale};
+    }
+    #layout {
+        width: calc(#{$desktop-width} - (#{$unit} * 2));
+    }
+    header {
+        nav {
+            ul {
+                li {
+                    a {
+                        display: inline;
+                        padding: var(--unit) calc(var(--unit) * 3);
+                        font: {
+                            size: scaleValue($base-font-size, $desktop-scale, 2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@function scaleValue($base, $scale, $multiplier: false) {
+    $scaledValue: $base;
+    @if $multiplier {
+        @for $index from 1 through $multiplier {
+            $scaledValue: $scaledValue * $scale;
+        }
+    }
+    @return $scaledValue;
+}
+
+@mixin fontScale($scale, $base, $scaleLinkMultiplier: false, $headingMultiplier: false) {
+    $font-size: $base;
+    p {
+        font-size: $font-size;
+    }
+    a {
+        font-size: scaleValue($base, $scale, $scaleLinkMultiplier);
+    }
+    $font-size: scaleValue($base, $scale, $headingMultiplier);
+    @for $index from 6 through 1 {
+        @if $index == 6 {
+        } @else {
+            h#{$index} {
+                $font-size: $font-size * $scale;
+                font-size: $font-size;
+            }
+        }
+    }
+}
+
+@mixin calcFontScale($scale, $base, $scaleLinkMultiplier: false, $headingMultiplier: false) {
+    $font-size: $base;
+    p {
+        font-size: var(--base);
+    }
+    a {
+        font-size: scaleValue($base, $scale, $scaleLinkMultiplier);
+    }
+    $font-size: scaleValue($base, $scale, $headingMultiplier);
+    :root {
+        --base: #{$font-size};
+        --scale: #{$scale};
+        @for $index from 6 through 1 {
+            @if $index == 6 {
+                --h#{$index}: #{$base};
+            } @else {
+                $prev: $index + 1;
+                --h#{$index}: calc(var(--h#{$prev}) * var(--scale));
+            }
+        }
+    }
+    @for $index from 6 through 1 {
+        h#{$index} {
+            font-size: var(--h#{$index});
+        }
+    }
+}
