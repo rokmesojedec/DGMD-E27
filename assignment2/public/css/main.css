@@ -267,10 +267,8 @@ footer {
 
   header,
 main {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    gap: var(--unit);
+    grid-column: span 2;
+    display: grid;
   }
 
   header {
@@ -281,6 +279,12 @@ main {
   #layout {
     min-width: 880px;
     width: calc(1080px - (var(--unit) * 2));
+    --gap: calc(var(--unit) / 2);
+    margin: 0 auto;
+    display: grid;
+  }
+  #layout grid {
+    gap: var(--gap);
   }
 
   header h1 {
@@ -289,6 +293,7 @@ main {
   header nav {
     align-items: flex-end;
     display: flex;
+    grid-column: 2/3;
   }
   header nav ul {
     display: flex;
@@ -310,15 +315,15 @@ main {
   main {
     --list-item-span-margin: 0.25rem;
     margin-top: var(--unit);
+    grid-gap: calc(var(--unit));
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    grid-template-rows: auto 1fr;
   }
   main article {
     display: flex;
     border-radius: 5px;
     margin-top: 0;
-    --default-width: calc(var(--column-count) / 3);
-    --gap: calc((var(--column-count) - var(--default-width)) * 0.2%);
-    --basis: calc((var(--default-width) / var(--column-count)) * 100%);
-    flex-basis: calc(var(--basis) - var(--gap));
+    grid-column-end: span 4;
   }
   main article:nth-child(odd) div {
     transform: rotate(-1.875deg);
@@ -339,74 +344,46 @@ main {
     transform: rotate(0.625deg);
   }
   main article:nth-child(1) {
-    --width: calc(1 * var(--default-width));
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span calc(1 * 4);
   }
   main article:nth-child(2) {
-    --width: calc(2 * var(--default-width));
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span calc(2 * 4);
   }
   main article.col-1 {
-    --width: 1;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 1;
   }
   main article.col-2 {
-    --width: 2;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 2;
   }
   main article.col-3 {
-    --width: 3;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 3;
   }
   main article.col-4 {
-    --width: 4;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 4;
   }
   main article.col-5 {
-    --width: 5;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 5;
   }
   main article.col-6 {
-    --width: 6;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 6;
   }
   main article.col-7 {
-    --width: 7;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 7;
   }
   main article.col-8 {
-    --width: 8;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 8;
   }
   main article.col-9 {
-    --width: 9;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 9;
   }
   main article.col-10 {
-    --width: 10;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 10;
   }
   main article.col-11 {
-    --width: 11;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 11;
   }
   main article.col-12 {
-    --width: 12;
-    --gap: calc((var(--column-count) - var(--width)) * 0.2%);
-    --basis: calc(var(--width) / var(--column-count) * 100%);
+    grid-column-end: span 12;
   }
   main article div {
     flex-basis: 100%;
