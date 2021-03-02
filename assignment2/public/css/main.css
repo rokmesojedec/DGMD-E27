@@ -423,16 +423,13 @@ main {
   :root {
     --base: 18px;
     --base-font-size: 18px;
+    --scale: 1.25;
   }
 
   main {
     --list-item-span-margin: 0.35rem;
     --unit: 2rem;
     --heading-margin: var(--unit);
-  }
-
-  :root {
-    --scale: 1.25;
   }
 
   #layout {
