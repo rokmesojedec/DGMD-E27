@@ -48,10 +48,8 @@
             }
             ul {
                 display: flex;
-
                 li {
                     display: flex;
-
                     & + li {
                         margin-left: calc(var(--unit) / 2);
                     }

@@ -407,6 +407,58 @@ main {
     --list-item-span-margin: 0.35rem;
     --unit: 2rem;
     --heading-margin: var(--unit);
+    --column-count: 16;
+  }
+  main article {
+    grid-column-end: span 4;
+  }
+  main article.col-xl-1 {
+    grid-column-end: span 1;
+  }
+  main article.col-xl-2 {
+    grid-column-end: span 2;
+  }
+  main article.col-xl-3 {
+    grid-column-end: span 3;
+  }
+  main article.col-xl-4 {
+    grid-column-end: span 4;
+  }
+  main article.col-xl-5 {
+    grid-column-end: span 5;
+  }
+  main article.col-xl-6 {
+    grid-column-end: span 6;
+  }
+  main article.col-xl-7 {
+    grid-column-end: span 7;
+  }
+  main article.col-xl-8 {
+    grid-column-end: span 8;
+  }
+  main article.col-xl-9 {
+    grid-column-end: span 9;
+  }
+  main article.col-xl-10 {
+    grid-column-end: span 10;
+  }
+  main article.col-xl-11 {
+    grid-column-end: span 11;
+  }
+  main article.col-xl-12 {
+    grid-column-end: span 12;
+  }
+  main article.col-xl-13 {
+    grid-column-end: span 13;
+  }
+  main article.col-xl-14 {
+    grid-column-end: span 14;
+  }
+  main article.col-xl-15 {
+    grid-column-end: span 15;
+  }
+  main article.col-xl-16 {
+    grid-column-end: span 16;
   }
 
   #layout {

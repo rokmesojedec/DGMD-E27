@@ -72,7 +72,6 @@ nav {
     ul {
         padding: 0;
         margin: var(--unit) 0 0 0 ;
- 
         li {
             display: inline;
             list-style: none;
@@ -82,7 +81,6 @@ nav {
                     @include gradient($gradient-base-degree, 25%, ($accent-primary, $accent-tertiary, $accent-tertiary));
                     text-transform: capitalize;
                     text-shadow: $link-text-shadow-style;
-         
                 }
             }
             a {

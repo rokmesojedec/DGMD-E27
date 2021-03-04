@@ -1,18 +1,36 @@
 @include mediaQuery($desktop-width) {
-
     :root{
         --base: 18px;
         --base-font-size: 18px;
         --scale: #{$desktop-scale};
     }
+
     main {
+        $grid-column-count: 16;
         --list-item-span-margin: 0.35rem;
         --unit: 2rem;
         --heading-margin: var(--unit);
+        --column-count: #{$grid-column-count};
+        article{ 
+            
+            ///////////// GRID LAYOUT MODE
+            /////////////////////////////////////////////////////////////////////////////////
+            @if $layout-type == "grid" {
+                @for $i from 1 through $grid-column-count {
+                    &.col-xl-#{$i} {
+                        grid-column-end: span $i;
+                    }
+                }
+                grid-column-end: span 4;
+            }
+
+        }
     }
+
     #layout {
         width: calc(#{$desktop-width} - (#{$unit} * 2));
     }
+
     header {
         nav {
             ul {
