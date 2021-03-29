@@ -1,0 +1,48 @@
+:root {
+    --font: Arial, sans-serif;
+    --color: navy;
+    --size: 150%;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--size);
+    color: var(--color);
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media print {
+     :root {
+        --font: Georgia, serif;
+        --color: black;
+        --size: 12pt;
+    }
+    .wrapper {
+        width: auto;
+        margin: auto;
+        columns: 3;
+    }
+    .pagebreak {
+        page-break-after: always;
+    }
+    p {
+        page-break-inside: avoid;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+    @page {
+        margin: 1in;
+    }
+    @page :first {
+        margin: 2in;
+    }
+}

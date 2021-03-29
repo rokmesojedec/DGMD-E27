@@ -1,0 +1,56 @@
+// Variables are stored here!
+//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*//
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
+// Generated from https://coolors.co/70d6ff-ff70a6-ff9770-ffd670-e9ff70
+// SCSS HEX
+$baby-blue: #70d6ffff;
+$french-pink: #ff70a6ff;
+$light-salmon: #ff9770ff;
+$orange-yellow-crayola: #ffd670ff;
+$mindaro: #e9ff70ff;
+$black: black;
+
+$font-color: $black;
+$secondary-color: $french-pink;
+$accent-primary: $baby-blue;
+$accent-secondary: $orange-yellow-crayola;
+$accent-tertiary: $mindaro;
+$accent-quaternary: $light-salmon;
+
+$font-stack: "IBM Plex Sans", sans-serif;
+$heading-font-stack: "Major Mono Display", monospace;
+$code-font-stack: "courier", monospace;
+$border-style: 2px solid color.scale($font-color, $alpha: -35%);
+
+$column-count: 12;
+$unit: 0.75rem;
+$headingBottomMargin: 0;
+$lipadding: 0;
+$site-width: 1080px;
+$desktop-width: 1600px;
+$base-font-size: 16px;
+$base-border-width: $base-font-size / 8;
+$mobile-font-scale: 1.200;
+$tablet-font-scale: 1.125;
+$desktop-scale: 1.250;
+
+$rotate-degree: 1deg;
+$gradient-base-degree: 40deg;
+
+$layout-type: "grid"; // flex | grid
+
+$grid-column-count: 12;
+
+$misprint: 3px;
+$blur: 2px;
+$h: $misprint;
+$w: $misprint;
+
+// Creates the cool misprinted colors around text
+$text-shadow-style: $h $w $blur lighterColor($accent-tertiary), -$h $w $blur lighterColor($accent-primary),
+    $h -$w $blur $secondary-color, -$h -$w $blur lighterColor($accent-quaternary);
+
+$link-text-shadow-style: misprintShadows(($accent-tertiary, $accent-primary, transparentize($secondary-color, 0.1), $accent-quaternary));

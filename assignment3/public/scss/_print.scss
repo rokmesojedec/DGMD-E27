@@ -1,0 +1,51 @@
+
+@media print {
+    :root {
+       --font: Georgia, serif;
+       --heading-font: "Times New Romnan", serif;
+       --font-color: black;
+       --base-font-size: 12pt;
+   }
+
+    div#layout {
+        width: auto;
+        margin: auto;
+        columns: 2;
+        margin-top: 1cm;
+        h1,h2,h3,h4,h5,h6{
+            letter-spacing: 0;
+            text-shadow: none;
+            font-weight: bold;
+            page-break-after: avoid;
+            margin-top: 0;
+        }
+        .pagebreak {
+            page-break-after: always;
+        }
+        // p {
+        //     page-break-inside: avoid;
+        // }
+        nav, footer, .noprint {
+            display: none;
+        }
+        main {
+            article {
+                background: none;
+                div{
+                    border: none;
+                    div { 
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+   @page {
+       margin: 1cm;
+   }
+   @page :first {
+       margin: 2cm;
+   }
+}

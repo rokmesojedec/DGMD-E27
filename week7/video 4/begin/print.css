@@ -1,0 +1,16 @@
+:root {
+    --font: Arial, sans-serif;
+    --color: navy;
+    --size: 150%;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--size);
+    color: var(--color);
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
