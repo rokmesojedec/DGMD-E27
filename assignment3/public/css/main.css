@@ -555,6 +555,10 @@ main {
   a:active {
     background-color: #00abf0;
   }
+
+  code {
+    font-size: --base-font-size;
+  }
 }
 /* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: portrait) {

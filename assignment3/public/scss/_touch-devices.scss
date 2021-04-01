@@ -12,6 +12,9 @@
             background-color: darken($accent-primary, 25%);
         }
     }
+    code{ 
+        font-size: --base-font-size;
+    }
 }
 
 /* use smaller heading scale for landscape orientation on touch devices */
