@@ -1,14 +1,14 @@
 @media (hover: none) and (pointer: coarse) {
+    @include calcFontScale($mobile-font-scale, $base-font-size, false, false);
     a {
         padding: $unit / 3;
         border: 1px solid $accent-primary;
-        display:inline-block;
-        border-radius: $unit / 2 ;
+        display: inline-block;
+        border-radius: $unit / 2;
         text-decoration: none;
         background-color: lighten($accent-primary, 25%);
-        &:active{
+        &:active {
             background-color: darken($accent-primary, 25%);
         }
     }
 }
-
