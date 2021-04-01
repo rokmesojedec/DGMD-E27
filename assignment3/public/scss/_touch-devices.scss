@@ -1,5 +1,6 @@
 @media (hover: none) and (pointer: coarse) {
     @include calcFontScale($mobile-font-scale, $base-font-size, false, false);
+    /* Create Bigger links for touch devices */
     a {
         padding: $unit / 3;
         border: 1px solid $accent-primary;
@@ -11,4 +12,8 @@
             background-color: darken($accent-primary, 25%);
         }
     }
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    @include calcFontScale($tablet-font-scale, $base-font-size, false, false);
 }
