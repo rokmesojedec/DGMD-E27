@@ -563,15 +563,15 @@ main {
 /* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: portrait) {
   :root {
-    --base-font-size: 14px;
-    --base: 14px;
+    --base-font-size: 12px;
+    --base: 12px;
   }
 }
 /* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: landscape) {
   :root {
-    --base-font-size: 12px;
-    --base: 12px;
+    --base-font-size: 14px;
+    --base: 14px;
   }
 
   p {
@@ -579,13 +579,13 @@ main {
   }
 
   a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   :root {
-    --base: 12px;
+    --base: 14px;
     --scale: 1.2;
-    --h6: 12px;
+    --h6: 14px;
     --h5: calc(var(--h6) * var(--scale));
     --h4: calc(var(--h5) * var(--scale));
     --h3: calc(var(--h4) * var(--scale));
