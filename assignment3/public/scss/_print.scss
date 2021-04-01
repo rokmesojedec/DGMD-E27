@@ -1,51 +1,124 @@
 
 @media print {
     :root {
-       --font: Georgia, serif;
-       --heading-font: "Times New Romnan", serif;
-       --font-color: black;
-       --base-font-size: 12pt;
-   }
+        --font: Georgia, serif;
+        --heading-font: "Times New Romnan", serif;
+        --font-color: black;
+        --base-font-size: 12pt;
+    }
 
     div#layout {
         width: auto;
         margin: auto;
-        columns: 2;
         margin-top: 1cm;
-        h1,h2,h3,h4,h5,h6{
+        header{
+            margin-bottom: 0.5cm;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             letter-spacing: 0;
             text-shadow: none;
             font-weight: bold;
             page-break-after: avoid;
             margin-top: 0;
+            color: black;
+
         }
         .pagebreak {
             page-break-after: always;
         }
-        // p {
-        //     page-break-inside: avoid;
-        // }
-        nav, footer, .noprint {
+        div{
+            page-break-before: avoid;
+        }
+        p {
+            page-break-inside: avoid;
+            page-break-before: avoid;
+        }
+        code{ 
+            page-break-inside: avoid;
+        }
+        nav,
+        footer,
+        .noprint {
             display: none;
         }
         main {
+            columns: 2;
             article {
+                margin-top:0;
+                page-break-inside: avoid;
                 background: none;
-                div{
+                div {
+                    padding: 0;
+                    margin: 0;
                     border: none;
-                    div { 
+                    background: none;
+                    div {
+                        padding: 0;
+                        margin: 0;
                         border: none;
                     }
                 }
             }
         }
+
+        @mixin printBullet($color){
+            -webkit-print-color-adjust: exact;
+            background-color: white !important;
+            position: relative;  
+            &::before{
+                position: absolute;
+                top:-18pt;
+                left:0;
+                display: block;
+                content: "•";
+                color: $color !important;
+                font-size: 36pt;
+            }
+        }
+        
+        /* I'm using the print bullet mixin to create a little trick to keep the bg-colors of the color scheme bullets.
+        The inline-block with bg-color is getting replaced by a ::before selector with content of • character with font-color.  */
+        .font-color {
+            @include printBullet($font-color);
+        }
+
+        .secondary-color {
+            @include printBullet($secondary-color);
+        }
+
+        .accent-primary {
+            @include printBullet($accent-primary);
+        }
+
+        .accent-secondary {
+            @include printBullet($accent-secondary);
+        }
+
+        .accent-tertiary {
+            @include printBullet($accent-tertiary);
+        }
+
+        .accent-quaternary {
+            @include printBullet($accent-quaternary);
+        }
+
+        a {
+            color: black;
+            &::after {
+                content: " (" attr(href) ")";
+            }
+        }
     }
 
-
-   @page {
-       margin: 1cm;
-   }
-   @page :first {
-       margin: 2cm;
-   }
+    @page {
+        margin: 1cm;
+    }
+    @page :first {
+        margin: 2cm;
+    }
 }

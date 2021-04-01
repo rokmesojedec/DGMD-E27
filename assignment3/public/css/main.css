@@ -1,5 +1,30 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+.font-color {
+  background-color: black;
+}
+
+.secondary-color {
+  background-color: #ff70a6ff;
+}
+
+.accent-primary {
+  background-color: #70d6ffff;
+}
+
+.accent-secondary {
+  background-color: #ffd670ff;
+}
+
+.accent-tertiary {
+  background-color: #e9ff70ff;
+}
+
+.accent-quaternary {
+  background-color: #ff9770ff;
+}
+
 :root {
   --unit: 0.75rem;
   --base-font-size: 16px;
@@ -485,30 +510,152 @@ main {
   div#layout {
     width: auto;
     margin: auto;
-    columns: 2;
     margin-top: 1cm;
+    /* I'm using the print bullet mixin to create a little trick to keep the bg-colors of the color scheme bullets.
+    The inline-block with bg-color is getting replaced by a ::before selector with content of • character with font-color.  */
   }
-  div#layout h1, div#layout h2, div#layout h3, div#layout h4, div#layout h5, div#layout h6 {
+  div#layout header {
+    margin-bottom: 0.5cm;
+  }
+  div#layout h1,
+div#layout h2,
+div#layout h3,
+div#layout h4,
+div#layout h5,
+div#layout h6 {
     letter-spacing: 0;
     text-shadow: none;
     font-weight: bold;
     page-break-after: avoid;
     margin-top: 0;
+    color: black;
   }
   div#layout .pagebreak {
     page-break-after: always;
   }
-  div#layout nav, div#layout footer, div#layout .noprint {
+  div#layout div {
+    page-break-before: avoid;
+  }
+  div#layout p {
+    page-break-inside: avoid;
+    page-break-before: avoid;
+  }
+  div#layout code {
+    page-break-inside: avoid;
+  }
+  div#layout nav,
+div#layout footer,
+div#layout .noprint {
     display: none;
   }
+  div#layout main {
+    columns: 2;
+  }
   div#layout main article {
+    margin-top: 0;
+    page-break-inside: avoid;
     background: none;
   }
   div#layout main article div {
+    padding: 0;
+    margin: 0;
     border: none;
+    background: none;
   }
   div#layout main article div div {
+    padding: 0;
+    margin: 0;
     border: none;
+  }
+  div#layout .font-color {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .font-color::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: black !important;
+    font-size: 36pt;
+  }
+  div#layout .secondary-color {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .secondary-color::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: #ff70a6ff !important;
+    font-size: 36pt;
+  }
+  div#layout .accent-primary {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .accent-primary::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: #70d6ffff !important;
+    font-size: 36pt;
+  }
+  div#layout .accent-secondary {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .accent-secondary::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: #ffd670ff !important;
+    font-size: 36pt;
+  }
+  div#layout .accent-tertiary {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .accent-tertiary::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: #e9ff70ff !important;
+    font-size: 36pt;
+  }
+  div#layout .accent-quaternary {
+    -webkit-print-color-adjust: exact;
+    background-color: white !important;
+    position: relative;
+  }
+  div#layout .accent-quaternary::before {
+    position: absolute;
+    top: -18pt;
+    left: 0;
+    display: block;
+    content: "•";
+    color: #ff9770ff !important;
+    font-size: 36pt;
+  }
+  div#layout a {
+    color: black;
+  }
+  div#layout a::after {
+    content: " (" attr(href) ")";
   }
 
   @page {

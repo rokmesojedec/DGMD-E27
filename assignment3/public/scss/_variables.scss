@@ -54,3 +54,27 @@ $text-shadow-style: $h $w $blur lighterColor($accent-tertiary), -$h $w $blur lig
     $h -$w $blur $secondary-color, -$h -$w $blur lighterColor($accent-quaternary);
 
 $link-text-shadow-style: misprintShadows(($accent-tertiary, $accent-primary, transparentize($secondary-color, 0.1), $accent-quaternary));
+
+.font-color{
+    background-color: $font-color;
+}
+
+.secondary-color{
+    background-color: $secondary-color;
+}
+
+.accent-primary{
+    background-color: $accent-primary;
+}
+
+.accent-secondary{
+    background-color: $accent-secondary;
+}
+
+.accent-tertiary{
+    background-color: $accent-tertiary;
+}
+
+.accent-quaternary{
+    background-color: $accent-quaternary;
+}

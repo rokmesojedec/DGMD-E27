@@ -56,3 +56,16 @@
     }
     background: linear-gradient($degrees, $colorValues);
 }
+
+@mixin printBullet($color){
+    position: relative;  
+    &::before{
+        position: absolute;
+        top:-18pt;
+        left:0;
+        display: block;
+        content: "•";
+        color: $color !important;
+        font-size: 36pt;
+    }
+}
