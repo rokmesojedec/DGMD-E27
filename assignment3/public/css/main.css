@@ -560,7 +560,7 @@ main {
 @media (hover: none) and (pointer: coarse) and (orientation: portrait) {
   :root {
     --base-font-size: 14px;
-    --base: 12px;
+    --base: 14px;
   }
 }
 /* use smaller heading scale for landscape orientation on touch devices */
@@ -575,13 +575,13 @@ main {
   }
 
   a {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   :root {
-    --base: 16px;
+    --base: 12px;
     --scale: 1.125;
-    --h6: 16px;
+    --h6: 12px;
     --h5: calc(var(--h6) * var(--scale));
     --h4: calc(var(--h5) * var(--scale));
     --h3: calc(var(--h4) * var(--scale));
