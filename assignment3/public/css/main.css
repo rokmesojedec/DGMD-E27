@@ -501,8 +501,15 @@ main {
 }
 @media (hover: none) and (pointer: coarse) {
   a {
-    padding: 0.75rem;
-    border: 1px solid black;
+    padding: 0.25rem;
+    border: 1px solid #70d6ffff;
+    display: inline-block;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    background-color: #f0fbff;
+  }
+  a:active {
+    background-color: #00abf0;
   }
 }
 @media print {

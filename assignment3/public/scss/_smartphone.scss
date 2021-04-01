@@ -1,6 +1,14 @@
 @media (hover: none) and (pointer: coarse) {
     a {
-        padding: $unit;
-        border: 1px solid black;
+        padding: $unit / 3;
+        border: 1px solid $accent-primary;
+        display:inline-block;
+        border-radius: $unit / 2 ;
+        text-decoration: none;
+        background-color: lighten($accent-primary, 25%);
+        &:active{
+            background-color: darken($accent-primary, 25%);
+        }
     }
 }
+
