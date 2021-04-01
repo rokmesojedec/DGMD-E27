@@ -559,11 +559,17 @@ main {
 /* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: portrait) {
   :root {
-    --base-font-size: 12px;
+    --base-font-size: 14px;
+    --base: 12px;
   }
 }
 /* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  :root {
+    --base-font-size: 12px;
+    --base: 12px;
+  }
+
   p {
     font-size: var(--base);
   }
