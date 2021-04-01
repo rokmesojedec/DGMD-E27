@@ -580,7 +580,7 @@ main {
 
   :root {
     --base: 12px;
-    --scale: 1.125;
+    --scale: 1.2;
     --h6: 12px;
     --h5: calc(var(--h6) * var(--scale));
     --h4: calc(var(--h5) * var(--scale));

@@ -29,5 +29,5 @@
         --base-font-size: 12px;
         --base: 12px;
     }
-    @include calcFontScale($tablet-font-scale, $base-font-size, false, false);
+    @include calcFontScale($mobile-font-scale, $base-font-size, false, false);
 }
