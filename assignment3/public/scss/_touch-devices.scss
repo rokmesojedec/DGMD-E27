@@ -1,5 +1,5 @@
 @media (hover: none) and (pointer: coarse) {
-    @include calcFontScale($mobile-font-scale, $base-font-size, false, false);
+    @include calcFontScale($tablet-font-scale, $base-font-size, false, false);
     /* Create Bigger links for touch devices */
     a {
         padding: $unit / 3;
