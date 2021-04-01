@@ -556,6 +556,13 @@ main {
     background-color: #00abf0;
   }
 }
+/* use smaller heading scale for landscape orientation on touch devices */
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+  :root {
+    --base-font-size: 12px;
+  }
+}
+/* use smaller heading scale for landscape orientation on touch devices */
 @media (hover: none) and (pointer: coarse) and (orientation: landscape) {
   p {
     font-size: var(--base);
