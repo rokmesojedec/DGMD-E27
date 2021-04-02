@@ -791,9 +791,6 @@ div#layout .noprint {
   @page {
     margin: 1cm;
   }
-  @page :first {
-    margin: 2cm;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

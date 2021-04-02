@@ -1,28 +1,28 @@
 {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://google.com/article"
-    },
-    "headline": "SASS Study",
-    "image": [
-      "http://mesojedec.io:8080/img/rok1-1.jpg",
-      "http://mesojedec.io:8080/img/rok-4-3.jpg",
-      "http://mesojedec.io:8080/img/rok-16-3.jpg"
-    ],
-    "datePublished": "2021-03-29T17:04:03+08:00",
-    "dateModified": "2021-03-29T19:20:54+08:00",
-    "author": {
-      "@type": "Person",
-      "name": "Rok Mesojedec"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "rokmesojedec.io",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "http://mesojedec.io:8080/img/rok1-1.jpg"
-      }
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://google.com/article"
+  },
+  "headline": "SASS Study",
+  "image": [
+    "http://mesojedec.io:8080/img/rok1-1.jpg",
+    "http://mesojedec.io:8080/img/rok-4-3.jpg",
+    "http://mesojedec.io:8080/img/rok-16-3.jpg"
+  ],
+  "datePublished": "2021-03-29T17:04:03+08:00",
+  "dateModified": "2021-03-29T19:20:54+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Rok Mesojedec"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "rokmesojedec.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://mesojedec.io:8080/img/rok1-1.jpg"
     }
   }
+}
