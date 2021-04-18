@@ -1,0 +1,7 @@
+User-Agent: google
+User-Agent: googlebot
+User-Agent: Twitterbot
+Crawl-delay: 10 
+
+User-agent: *
+Disallow: /

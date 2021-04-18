@@ -1,0 +1,36 @@
+@media (hover: none) and (pointer: coarse) {
+    @include calcFontScale($tablet-font-scale, $base-font-size, false, false);
+    /* Create Bigger links for touch devices */
+    a {
+        padding: $unit / 3;
+        border: 1px solid $accent-primary;
+        display: inline-block;
+        border-radius: $unit / 2;
+        text-decoration: none;
+        background-color: lighten($accent-primary, 25%);
+        &:active {
+            background-color: darken($accent-primary, 25%);
+        }
+    }
+    code{ 
+        font-size: --base-font-size;
+    }
+}
+
+/* use smaller heading scale for landscape orientation on touch devices */
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+    :root {
+        --base-font-size: 12px;
+        --base: 12px;
+    }
+}
+
+/* use smaller heading scale for landscape orientation on touch devices */
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    $base-font-size: 14px;
+    :root {
+        --base-font-size: 14px;
+        --base: 14px;
+    }
+    @include calcFontScale($mobile-font-scale, $base-font-size, false, false);
+}

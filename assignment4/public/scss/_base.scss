@@ -1,0 +1,65 @@
+// extend class
+%headingFontStyle {
+    text: {
+        shadow: $text-shadow-style;
+    }
+    font: {
+        family: var(--heading-font);
+    }
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font: {
+        size: var(--base-font-size);
+        family: var(--font);
+    }
+    color: var(--font-color);
+}
+
+body {
+    margin: calc(var(--unit) * 2);
+    padding: $unit $unit * 4;
+}
+
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: color.scale(darken($accent-primary, 65%), $alpha: -13%); // sass function used
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: var(--heading-margin);
+    // Extend is used here
+    @extend %headingFontStyle;
+    span {
+        margin-right: $unit / 2;
+    }
+}
+
+.muted{
+    color: $muted;
+}
+
+@include calcFontScale($tablet-font-scale, $base-font-size, false, false);
+
+
+
+
+footer {
+    margin: {
+        top: var(--unit);
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
