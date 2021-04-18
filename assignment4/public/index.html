@@ -2,6 +2,7 @@
 <html lang="en" prefix="og: https://ogp.me/ns/article#">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@RMesojedec" />
     <meta name="twitter:creator" content="@RMesojedec" />
@@ -18,8 +19,6 @@
     <meta property="og:article:tag " content="sass,scss,css,html,web,technology,www,design" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASS Study - Rok Mesojedec</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="css/main.css">
     <script type="application/ld+json">
         {
@@ -55,7 +54,7 @@
 
 <body>
     <div id="layout">
-        <header class="uk-navbar-container" uk-navbar>
+        <header class="uk-navbar-container" data-uk-navbar>
             <nav class="uk-navbar-left ">
                 <a href="" class="uk-navbar-item uk-logo">
                     <h1>SASS Study</h1>
@@ -66,11 +65,11 @@
                     <li><a href="https://sass-lang.com/documentation" target="_blank">SASS docs</a></li>
                     <li><a href="https://www.w3.org/Style/CSS/specs.en.html" target="_blank">CSS docs</a></li>
                 </ul>
-     
+
             </nav>
             <div class="uk-width-1-5 uk-position-right">
-                <a class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"
-                    href="#"></a>
+                <a class="uk-navbar-toggle uk-hidden@s" data-uk-navbar-toggle-icon
+                    data-uk-toggle="target: #offcanvas-nav" href="#"></a>
             </div>
         </header>
 
@@ -96,49 +95,48 @@
                     <h2 class="uk-article-title"><span class="noprint">&#x1F468;&#x200D;&#x1F4BB;</span><span
                             itemprop="name">Design
                             Concept</span></h2>
-                    <span itemprop="articleBody">
-                        <p class="uk-article-meta">Posted: <time itemprop="datePublished"
-                                datetime="2021-03-29T17:04:03+08:00">March
-                                31, 2021</time> by
-                            <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
-                                    itemprop="name"></span>Rok Mesojedec</span>
-                        </p>
+                    <p itemprop="articleBody">
+                    <p class="uk-article-meta">Posted: <time itemprop="datePublished"
+                            datetime="2021-03-29T17:04:03+08:00">March
+                            31, 2021</time> by
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                itemprop="name"></span>Rok Mesojedec</span>
+                    </p>
 
-                        <p>The requirements for DGMD E27 Assignment 1 state that the submitted website needs to
-                            implement a
-                            grid/flex based layout. I decided that the visual design should reflect the spirit of
-                            grid/flex
-                            techniques and produce a play of rectangular geometric shapes with a pleasing and
-                            complementing
-                            combination of colors.</p>
-                        <p>Having rectangles and angular shapes in mind, I tried experimenting with a misprint
-                            style,
-                            which
-                            can be an artifact of misaligned color layers when printing paper media. I tried to
-                            replicate
-                            this with each grid data cell, which has a colored border, with a slightly misaligned
-                            background, which protrudes outside the bounds of the border container by being slightly
-                            rotated
-                            by 1.5 degrees. The content inside the inner container is, in turn, rotated back to
-                            0-degree
-                            horizontal alignment, to avoid affecting the readability of the content.</p>
+                    <p>The requirements for DGMD E27 Assignment 1 state that the submitted website needs to
+                        implement a
+                        grid/flex based layout. I decided that the visual design should reflect the spirit of
+                        grid/flex
+                        techniques and produce a play of rectangular geometric shapes with a pleasing and
+                        complementing
+                        combination of colors.</p>
+                    <p>Having rectangles and angular shapes in mind, I tried experimenting with a misprint
+                        style,
+                        which
+                        can be an artifact of misaligned color layers when printing paper media. I tried to
+                        replicate
+                        this with each grid data cell, which has a colored border, with a slightly misaligned
+                        background, which protrudes outside the bounds of the border container by being slightly
+                        rotated
+                        by 1.5 degrees. The content inside the inner container is, in turn, rotated back to
+                        0-degree
+                        horizontal alignment, to avoid affecting the readability of the content.</p>
 
-                        <p>In addition to main article containers, I also styled site headings, by applying on them
-                            sharp
-                            text shadows which are colored in all the different color accents I picked for the color
-                            scheme
-                            of this site. This gives the heading an eye-catching and - in my opinion - aesthetically
-                            pleasing look. And what's really cool is that this is achieved with a code-only approach
-                            so
-                            no
-                            photoshop was needed.
-                        </p>
-
-                    </span>
+                    <p>In addition to main article containers, I also styled site headings, by applying on them
+                        sharp
+                        text shadows which are colored in all the different color accents I picked for the color
+                        scheme
+                        of this site. This gives the heading an eye-catching and - in my opinion - aesthetically
+                        pleasing look. And what's really cool is that this is achieved with a code-only approach
+                        so
+                        no
+                        photoshop was needed.
+                    </p>
+                    </p>
                 </article>
             </div>
             <div>
-                <article class="uk-card uk-card-body uk-card-default  uk-article"">
+                <article class="uk-card uk-card-body uk-card-default uk-article">
                     <h2 class=" uk-article-title"><span class="noprint">&#127752;</span>Colors</h2>
                     <p class="uk-article-meta">Posted: <time itemprop="datePublished"
                             datetime="2021-03-29T17:04:03+08:00">March
@@ -215,18 +213,18 @@
         <footer class="uk-text-center uk-position-relative uk-padding">
             <p>&#169; 2021 <a href="mailto:rok@mesojedec.io">Rok Mesojedec</a>. All rights reserved.</p>
             <ul class="uk-iconnav uk-position-bottom-center">
-                <li><a href="#" uk-icon="icon: facebook"></a></li>
-                <li><a href="#" uk-icon="icon: github"></a></li>
-                <li><a href="#" uk-icon="icon: instagram"></a></li>
-                <li><a href="#" uk-icon="icon: youtube"></a></li>
+                <li><a href="#" data-uk-icon="icon: facebook"></a></li>
+                <li><a href="#" data-uk-icon="icon: github"></a></li>
+                <li><a href="#" data-uk-icon="icon: instagram"></a></li>
+                <li><a href="#" data-uk-icon="icon: youtube"></a></li>
             </ul>
         </footer>
     </div>
 
     <!-- off canvas nav bar -->
-    <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div id="offcanvas-nav" data-uk-offcanvas="overlay: true">
         <div class="uk-offcanvas-bar">
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <button class="uk-offcanvas-close" type="button" data-uk-close></button>
             <ul class="uk-nav uk-nav-default ">
                 <li class="uk-active"><a href="index.html">SASS Study</a></li>
                 <li><a href="about.html">About Rok</a></li>
@@ -238,4 +236,5 @@
     <script src="uikit/dist/js/uikit.min.js"></script>
     <script src="uikit/dist/js/uikit-icons.min.js"></script>
 </body>
+
 </html>
