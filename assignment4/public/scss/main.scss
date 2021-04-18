@@ -4,8 +4,8 @@
 $base-body-font-family: $font-stack;
 $base-heading-font-family: $heading-font-stack;
 // 2. Import default variables and available mixins.
-@import "../../uikit/src/scss/variables-theme.scss";
-@import "../../uikit/src/scss/mixins-theme.scss";
+@import "../uikit/src/scss/variables-theme.scss";
+@import "../uikit/src/scss/mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
 @mixin hook-base-code() {
@@ -50,7 +50,8 @@ $base-heading-font-family: $heading-font-stack;
                 &:after {
                         background: none !important;
                 }
-                background: url(../img/vienna.webp);
+                background: url(img/vienna.webp);
+                // photo taken from https://www.telegraph.co.uk/travel/cruises/port-guides/vienna-cruise-port-guide/
         }
 }
 
@@ -85,4 +86,4 @@ $base-heading-font-family: $heading-font-stack;
 }
 
 // 4. Import UIkit.
-@import "../../uikit/src/scss/uikit-theme.scss";
+@import "../uikit/src/scss/uikit-theme.scss";

@@ -146,7 +146,7 @@ footer {
 }
 
 .uk-grid div.parallax article {
-  background: url(../img/vienna.webp);
+  background: url(img/vienna.webp);
 }
 .uk-grid div.parallax article:after {
   background: none !important;
